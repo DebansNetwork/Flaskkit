@@ -13,30 +13,13 @@ def index():
     return render_template('index.html')
 
 @app.route('/about')
-def index():
+def about():
     return render_template('index.html')
 
 @app.route('/team')
-def index():
-    return render_template('index.html')
-
 @app.route('/team/<name>')
-def index(name=null):
+def team(name=null):
     return render_template('team.html', name=name)
-
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    if request.method == 'POST':
-        do_the_login()
-    else:
-        show_the_login_form()
-
-@app.route('/register', methods=['GET', 'POST'])
-def login():
-    if request.method == 'POST':
-        do_the_login()
-    else:
-        show_the_login_form()
 
 if __name__ == '__main__':
     app.run()
