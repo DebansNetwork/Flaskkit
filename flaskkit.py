@@ -18,7 +18,7 @@ def about():
 
 @app.route('/team')
 @app.route('/team/<name>')
-def team(name=null):
+def team(name=None):
     return render_template('team.html', name=name)
 
 if __name__ == '__main__':
