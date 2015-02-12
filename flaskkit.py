@@ -10,7 +10,10 @@ mongo = PyMongo(app, config_prefix='MONGO')
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+	if 'username' in session:
+       	return render_template('index.html', name=escape(session['username']))
+    else
+    	return render_template('index.html' name=escape(session['username']))
 
 @app.route('/about')
 def about():
