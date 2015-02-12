@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, session
 from flask.ext.pymongo import PyMongo
 
 app = Flask(__name__)
@@ -11,7 +11,7 @@ mongo = PyMongo(app, config_prefix='MONGO')
 @app.route('/')
 def index():
 	if 'username' in session:
-        return render_template('index.html', name=escape(session['username']))
+        return 'Logged in as %s' % escape(session['username'])
     return render_template('index.html')
 
 @app.route('/about')
