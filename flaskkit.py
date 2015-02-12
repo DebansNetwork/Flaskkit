@@ -21,5 +21,13 @@ def about():
 def team(name=None):
     return render_template('team.html', name=name)
 
+@app.route("/login")
+def login():
+    return render_template('user/login.html')
+
+@app.route("/register")
+def register():
+    return render_template('user/register.html')
+
 if __name__ == '__main__':
     app.run()
